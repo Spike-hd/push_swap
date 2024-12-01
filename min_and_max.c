@@ -1,31 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   min_and_max.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 18:35:11 by spike             #+#    #+#             */
-/*   Updated: 2024/12/01 16:52:39 by spike            ###   ########.fr       */
+/*   Created: 2024/12/01 16:45:52 by spike             #+#    #+#             */
+/*   Updated: 2024/12/01 22:46:47 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-#include <unistd.h>
-
-typedef struct s_node
+int find_max(t_node **a)
 {
-	int				nb;
-	int				simplified_nb;
-	int				was_min;
-	int				average;
-	struct s_node	*next;
-	struct s_node	*prev;
-}	t_node;
+	t_node *cur;
+	int max;
 
-int find_max(t_node **a);
-int find_min(t_node **a);
+	cur = *a;
+	max = cur->nb;
+	while (cur)
+	{
+		if (cur->nb > max)
+			max = cur->nb;
+		cur = cur->next;
+	}
+	return (max);
+}
 
-#endif
+int find_min(t_node **a)
+{
+	t_node *cur;
+	int min;
+
+	cur = *a;
+	min = __INT_MAX__;
+	while (cur)
+	{
+		if (cur->nb < min && cur->was_min == 0)
+			min = cur->nb;
+		cur = cur->next;
+	}
+	return (min);
+}
