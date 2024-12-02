@@ -3,35 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_and_parse.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hduflos <hduflos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 11:37:59 by spike             #+#    #+#             */
-/*   Updated: 2024/12/02 09:52:28 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/02 15:49:25 by hduflos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	check_errors(char **a)
-int	check_duplicate(t_node **a)
-{
-	t_node	*cur;
-	t_node	*cur2;
-
-	cur = *a;
-	while (cur)
-	{
-		cur2 = cur->next;
-		while(cur2)
-		{
-			if(cur2->nb == cur->nb)
-				return (1);
-			cur2 = cur2->next;
-		}
-		cur = cur->next;
-	}
-	return (0);
-}
 
 void	init_nodes(t_node **a, int value)
 {
@@ -114,15 +93,15 @@ int	init_and_parse(t_node **a, char **av)
 	while (av[i])
 	{
 		if (is_valid(av[i]))
-			init_nodes(&a, ft_aoi(av[i]));
+			init_nodes(a, ft_aoi(av[i]));
 		else
 			return (-1);
 		i++;
 	}
-	size = init_size_and_median(&a); // c'est bof comme fonction
-	if (check_duplicate(&a))
+	size = i;
+	if (check_duplicate(a))
 		return (-1);
-	init_simplified_nb(&a, size);
+	init_simplified_nb(a, size);
+
 	return (size);
-	// nouvelle fonction bool pour min / max ?
 }
