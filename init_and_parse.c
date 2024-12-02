@@ -6,13 +6,13 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 11:37:59 by spike             #+#    #+#             */
-/*   Updated: 2024/12/01 22:46:49 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/02 09:52:28 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
+int	check_errors(char **a)
 int	check_duplicate(t_node **a)
 {
 	t_node	*cur;
@@ -57,7 +57,7 @@ void	init_nodes(t_node **a, int value)
 	}
 }
 
-int	init_size_and_median(t_node **a) // devrais je egalement indiquer le min et max ?
+int	init_size_and_median(t_node **a) // a modifier, l'average est useless
 {
 	t_node	*cur;
 	int		count;
@@ -113,7 +113,10 @@ int	init_and_parse(t_node **a, char **av)
 	i = 0;
 	while (av[i])
 	{
-		init_nodes(&a, ft_aoi(av[i])); // <= il faut verificer chaque atoi
+		if (is_valid(av[i]))
+			init_nodes(&a, ft_aoi(av[i]));
+		else
+			return (-1);
 		i++;
 	}
 	size = init_size_and_median(&a); // c'est bof comme fonction

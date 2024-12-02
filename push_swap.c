@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 21:26:57 by spike             #+#    #+#             */
-/*   Updated: 2024/12/01 15:24:51 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/02 09:31:29 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,10 @@ elle contient :
 	- sa taille totale
 
 Il faut maintenant creer l'algo de radix sort.
+
+Il faut maintenant connecter toute les fonctions ensemble + reflechir pour les moins de 100 si radix sort n'est pas opti.
+Solution :
+	- Nouvel algo ? => tri par insertion / quick sort ?
+	- optimisation de radix sort ?
 
 */
