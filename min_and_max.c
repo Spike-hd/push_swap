@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 16:45:52 by spike             #+#    #+#             */
-/*   Updated: 2024/12/01 22:46:47 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/02 21:51:51 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int find_max(t_node **a)
 {
-	t_node *cur;
-	int max;
+	t_node	*cur;
+	int		max;
 
 	cur = *a;
 	max = cur->nb;
@@ -30,8 +30,8 @@ int find_max(t_node **a)
 
 int find_min(t_node **a)
 {
-	t_node *cur;
-	int min;
+	t_node	*cur;
+	int		min;
 
 	cur = *a;
 	min = __INT_MAX__;

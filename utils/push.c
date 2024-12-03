@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 14:48:26 by spike             #+#    #+#             */
-/*   Updated: 2024/11/27 18:45:42 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/02 19:49:50 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static void	push(t_node **x, t_node **y) // je push y dans x
 {
 	t_node	*cur1;
 	t_node	*old_head_x;
-	t_node	*head_y;
 
 	if (!y || !*y)
 		return ;

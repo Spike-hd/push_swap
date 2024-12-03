@@ -3,15 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hduflos <hduflos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:46:18 by hduflos           #+#    #+#             */
-/*   Updated: 2024/12/02 16:18:04 by hduflos          ###   ########.fr       */
+/*   Updated: 2024/12/02 19:35:37 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//ATOL
+
+long	ft_atol(const char *str)
+{
+	long result;
+	int sign;
+	int i;
+
+	result = 0;
+	sign = 1;
+	i = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (ft_isdigit(str[i]))
+	{
+		result = (result * 10) + str[i] - '0';
+		i++;
+	}
+	return (result * sign);
+}
+
 int	is_valid(char *str)
 {
 	int		i;
@@ -31,6 +56,7 @@ int	is_valid(char *str)
 		return (-1);
 	return (0);
 }
+
 int	check_duplicate(t_node **a)
 {
 	t_node	*cur;
@@ -49,4 +75,10 @@ int	check_duplicate(t_node **a)
 		cur = cur->next;
 	}
 	return (0);
+}
+
+int	print_error(void)
+{
+	ft_printf("Error\n");
+	return (1);
 }

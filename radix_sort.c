@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 15:32:03 by spike             #+#    #+#             */
-/*   Updated: 2024/12/01 23:48:45 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/02 19:43:58 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	radix_sort(t_node **a, t_node **b, int max)
 {
 	int		nb_bits;
 	int		i;
-	int		j;
 	int		size;
 
 	nb_bits = 0;
+	size = max;
 	while (max)
 	{
 		nb_bits++;
