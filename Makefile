@@ -5,7 +5,7 @@ OBJ_DIR = objects
 UTILS_DIR = utils
 
 # Fichiers sources
-SRC_FILES = errors.c init_and_parse.c min_and_max.c push_swap.c radix_sort.c
+SRC_FILES = errors.c init_and_parse.c min_and_max.c push_swap.c radix_sort.c sorting_all.c
 UTILS_FILES = push.c reverse_rotate.c rotate.c swap.c
 
 SRC = $(SRC_FILES) $(addprefix $(UTILS_DIR)/, $(UTILS_FILES))

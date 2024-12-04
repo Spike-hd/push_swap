@@ -6,12 +6,25 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 16:45:52 by spike             #+#    #+#             */
-/*   Updated: 2024/12/02 21:51:51 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/04 21:04:22 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
+int	get_size(t_node *stack)
+{
+	int size;
+
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return size;
+}
 int find_max(t_node **a)
 {
 	t_node	*cur;

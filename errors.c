@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:46:18 by hduflos           #+#    #+#             */
-/*   Updated: 2024/12/02 19:35:37 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/04 21:24:07 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ long	ft_atol(const char *str)
 	}
 	return (result * sign);
 }
-
-int	is_valid(char *str)
+int is_valid(char *str)
 {
 	int		i;
 	long	nb;
@@ -45,17 +44,22 @@ int	is_valid(char *str)
 	i = 0;
 	while (ft_isspace(str[i]))
 		i++;
+	if (!str[i])
+		return (0);
+	if ((str[i] == '-' || str[i] == '+') && !ft_isdigit(str[i + 1]))
+		return (0);
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (ft_isdigit(str[i]))
 		i++;
-	if (str[i] && !ft_isdigit(str[i]))
-		return (-1);
-	nb = ft_atol(str); //TODO
-	if (nb < INT_MIN || nb > __INT_MAX__)
-		return (-1);
-	return (0);
+	if (str[i])
+		return (0);
+	nb = ft_atol(str);
+	if (nb < INT_MIN || nb > INT_MAX)
+		return (0);
+	return (1);
 }
+
 
 int	check_duplicate(t_node **a)
 {
@@ -80,5 +84,22 @@ int	check_duplicate(t_node **a)
 int	print_error(void)
 {
 	ft_printf("Error\n");
+	return (1);
+}
+
+int	already_sorted(t_node **a, int size)
+{
+	t_node	*cur;
+
+	if (size == 1)
+		return (1);
+
+	cur = *a;
+	while (cur->next)
+	{
+		if (cur->next->simplified_nb > cur->simplified_nb)
+			return (0);
+		cur = cur->next;
+	}
 	return (1);
 }

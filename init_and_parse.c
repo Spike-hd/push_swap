@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 11:37:59 by spike             #+#    #+#             */
-/*   Updated: 2024/12/02 22:12:48 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/04 17:17:10 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,16 @@ int	init_and_parse(t_node **a, char **av)
 	i = 0;
 	while (av[i])
 	{
-		//if (is_valid(av[i]))
+		if (is_valid(av[i]))
 			init_nodes(a, ft_atoi(av[i]));
-		//else
-			//return (0);
+		else
+			return (0);
 		i++;
 	}
 	if (check_duplicate(a))
 		return (0);
 	init_simplified_nb(a, i);
-
+	if (already_sorted(a, i))
+		return (1);
 	return (i);
 }
