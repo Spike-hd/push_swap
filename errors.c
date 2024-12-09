@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:46:18 by hduflos           #+#    #+#             */
-/*   Updated: 2024/12/04 21:24:07 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/10 00:12:26 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,9 @@ int	check_duplicate(t_node **a)
 	return (0);
 }
 
-int	print_error(void)
+int	print_error(t_node **a)
 {
+	clear_stack(&a);
 	ft_printf("Error\n");
 	return (1);
 }

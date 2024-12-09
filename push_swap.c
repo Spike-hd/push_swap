@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 21:26:57 by spike             #+#    #+#             */
-/*   Updated: 2024/12/04 21:13:37 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/10 00:12:49 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ int	main(int ac, char **av)
 	{
 		split_av = ft_split(av[1], ' ');
 		if (!split_av)
-			return (print_error());
+			return (print_error(&a));
 		size = init_and_parse(&a, split_av);
 		free_split(split_av);
 	}
 	else
 		size = init_and_parse(&a, av + 1);
 	if (!size)
-		return (print_error());
+		return (print_error(&a));
 	if (size > 1)
 		sorting_all(&a, &b, size);
 	clear_stack(&a);

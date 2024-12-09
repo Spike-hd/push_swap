@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 18:35:11 by spike             #+#    #+#             */
-/*   Updated: 2024/12/04 21:25:41 by spike            ###   ########.fr       */
+/*   Updated: 2024/12/10 00:11:49 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void	sa(t_node **a);
 void	sb(t_node **b);
 void	ss(t_node **a, t_node **b);
 
-int		print_error(void);
+void clear_stack(t_node **stack);
+int		print_error(t_node **a);
 int		is_valid(char *str);
 int		check_duplicate(t_node **a);
 int		already_sorted(t_node **a, int size);
