@@ -64,3 +64,21 @@ Clone and compile the project with:
 git clone https://github.com/mpeyre-s/push_swap.git
 cd push_swap
 make
+```
+This will generate the `push_swap` executable.
+
+---
+
+## Usage
+
+```bash
+./push_swap [list of integers]
+```
+
+## Error Handling
+
+- 🚫 Duplicate numbers are not allowed  
+- 🔢 Only valid integers are accepted  
+- 📉 Inputs outside of `INT_MIN` and `INT_MAX` are rejected  
+- ❌ Proper error message is printed: `Error\n`
+
